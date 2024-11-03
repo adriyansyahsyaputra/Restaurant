@@ -4,7 +4,7 @@ export default function Chef() {
   return (
     <>
       {/*  Chef Start  */}
-      <div className="container px-6 font-roboto mt-20 lg:px-12">
+      <div className="container px-6 font-roboto mt-24 lg:px-12">
         <div className="text-center">
           <h3 className="font-thin text-xl mb-2">Our Chef</h3>
           <h3 className="text-4xl mb-2 font-semibold">Meet Our Chef</h3>

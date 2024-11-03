@@ -4,7 +4,7 @@ export default function Search() {
   return (
     <>
       {/* Search input */}
-      <div className="w-full lg:w-1/3">
+      <div className="w-full lg:w-1/3 mt-28">
         <input
           type="text"
           placeholder="Search..."

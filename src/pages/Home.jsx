@@ -6,7 +6,7 @@ import AboutSec from "../components/Layouts/Home/AboutSec";
 import ChooseUs from "../components/Layouts/Home/ChooseUs";
 import FavouriteFoods from "../components/Layouts/Home/FavouriteFoods";
 import FavouriteDrinks from "../components/Layouts/Home/FavouriteDrinks";
-import Reason from "../components/Layouts/Home/ChooseUs";
+import Reason from "../components/Layouts/Home/Reason";
 import Chef from "../components/Layouts/Home/Chef";
 import Testimoni from "../components/Layouts/Home/Testimoni";
 import ContactUs from "../components/Layouts/Home/ContactUs";
@@ -18,7 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Slogan />
-      <main className="container mt-10">
+      <main className="container mt-14">
         <AboutSec />
         <ChooseUs />
         <FavouriteFoods />

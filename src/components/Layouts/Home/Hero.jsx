@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../Elements/Button/Button";
 
 export default function Hero() {
   return (
@@ -14,11 +15,7 @@ export default function Hero() {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
               dolor dignissimos fugit quaerat error quae!
             </p>
-            <button
-              type="button"
-              className="bg-red-500 px-3 py-2 rounded-xl shadow-lg text-slate-100 font-medium hover:bg-red-600">
-              Order Now!
-            </button>
+            <Button classname="bg-red-500 px-3 py-2 mt-4 hover:bg-red-600">Order Now</Button>
           </div>
           <div>
             <img src="./public/img/burger.png" alt="Hero" />

@@ -17,10 +17,15 @@ export default function VariousFoods() {
             key={food.id}
             className="text-slate-600 bg-white rounded-lg shadow-lg">
             <Card
-              title={food.nama}
+              id={food.id}
+              name={food.name}
               rating={food.rating}
-              harga={food.harga}
+              price={food.price.toLocaleString("id-ID", {
+                style: "currency",
+                currency: "IDR",
+              })}
               reviewer={food.reviewer}
+              image={food.image}
             />
           </div>
         ))}

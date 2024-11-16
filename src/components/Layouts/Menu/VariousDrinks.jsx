@@ -18,10 +18,15 @@ export default function VariousDrinks() {
             key={drink.id}
             className="text-slate-600 bg-white rounded-lg shadow-lg">
             <Card
-              title={drink.nama}
+              id={drink.id}
+              name={drink.name}
               rating={drink.rating}
               reviewer={drink.reviewer}
-              harga={drink.harga}
+              price={(drink.price).toLocaleString("id-ID", {
+                style: "currency",
+                currency: "IDR",
+              })}
+              image={drink.image}
             />
           </div>
         ))}

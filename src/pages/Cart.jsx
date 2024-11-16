@@ -6,7 +6,7 @@ export default function Cart() {
   return (
     <>
       <Navbar />
-      <main className="container my-20 px-6 md:px-14">
+      <main className="container my-20 px-6 overflow-x-hidden md:px-14">
         <CartResult />
       </main>
       <Footer />

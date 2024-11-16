@@ -1,6 +1,17 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import { getDataFoods } from "../../../utils/dataFoods";
 
 export default function FavouriteFoods() {
+  const [foods, setFavouriteFoods] = useState([]);
+
+  useEffect(() => {
+    const favouriteFoods = getDataFoods
+      .filter((food) => food.rating > 4.5)
+      .slice(0, 4);
+    setFavouriteFoods(favouriteFoods);
+  }, []);
+
+
   return (
     <>
       {/*  Favourite Food Start  */}
@@ -13,50 +24,22 @@ export default function FavouriteFoods() {
           </p>
         </div>
         <section className="mt-5 grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-2">
-          <div className="text-center">
-            <img
-              src="./public/img/nasgor.png"
-              alt="Produk 1"
-              className="rounded-full mx-auto mb-2"
-            />
-            <h5 className="text-lg font-serif font-normal">Nasi Goreng</h5>
-            <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
-              Rp. 35.000
-            </p>
-          </div>
-          <div className="text-center">
-            <img
-              src="./public/img/tteokbokki.png"
-              alt="Produk 1"
-              className="rounded-full mx-auto mb-2"
-            />
-            <h5 className="text-lg font-serif font-normal">Tteokbokki</h5>
-            <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
-              Rp. 45.000
-            </p>
-          </div>
-          <div className="text-center">
-            <img
-              src="./public/img/nasgor.png"
-              alt="Produk 1"
-              className="rounded-full mx-auto mb-2"
-            />
-            <h5 className="text-lg font-serif font-normal">Nasi Goreng</h5>
-            <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
-              Rp. 35.000
-            </p>
-          </div>
-          <div className="text-center">
-            <img
-              src="./public/img/tteokbokki.png"
-              alt="Produk 1"
-              className="rounded-full mx-auto mb-2"
-            />
-            <h5 className="text-lg font-serif font-normal">Tteokbokki</h5>
-            <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
-              Rp. 45.000
-            </p>
-          </div>
+          {foods.map((food) => (
+            <div className="text-center" key={food.id}>
+              <img
+                src={`/img/${food.image}`}
+                alt="Produk 1"
+                className="rounded-full mx-auto mb-2 w-48 h-48 object-cover"
+              />
+              <h5 className="text-lg font-serif font-normal">{food.name}</h5>
+              <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
+                {food.price.toLocaleString("id-ID", {
+                  style: "currency",
+                  currency: "IDR",
+                })}
+              </p>
+            </div>
+          ))}
         </section>
       </div>
       {/*  Favourite Food End  */}

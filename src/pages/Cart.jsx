@@ -1,5 +1,5 @@
 import CartResult from "../components/Layouts/Cart/CartResult";
-import Footer from "../components/template/footer/Footer";
+import Footer from "../components/template/Footer/Footer";
 import Navbar from "../components/template/Navbar/Navbar";
 
 export default function Cart() {

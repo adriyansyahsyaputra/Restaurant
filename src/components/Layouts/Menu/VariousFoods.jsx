@@ -26,6 +26,7 @@ export default function VariousFoods() {
               })}
               reviewer={food.reviewer}
               image={food.image}
+              quantity={food.quantity}
             />
           </div>
         ))}

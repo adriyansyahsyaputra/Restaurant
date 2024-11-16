@@ -32,7 +32,7 @@ export default function FavouriteDrinks() {
               />
               <h5 className="text-lg font-serif font-normal">{drink.name}</h5>
               <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
-                {drink.price.toLocaleString("id-ID", {
+                {parseInt(drink.price).toLocaleString("id-ID", {
                   style: "currency",
                   currency: "IDR",
                 })}

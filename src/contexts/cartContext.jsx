@@ -2,11 +2,11 @@ import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
-  console.log(cart);
 
   const addToCart = (item) => {
     const price = parseInt(item.price)
@@ -32,9 +32,21 @@ export function CartProvider({ children }) {
 
   const clearCart = () => setCart([]);
 
+  const updateQuantity = (id, quantity) => {
+    setCart((prevCart) => {
+      if (quantity < 1) {
+        return prevCart.filter((item) => item.id !== id);
+      }
+      return prevCart.map((item) =>
+        item.id === id ? { ...item, quantity } : item
+      );
+    });
+  };
+
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}>
+      value={{ cart, addToCart, removeFromCart, clearCart, updateQuantity }}>
       {children}
     </CartContext.Provider>
   );

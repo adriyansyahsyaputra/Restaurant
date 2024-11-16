@@ -7,6 +7,7 @@ import Menu from './pages/Menu';
 import Login from './components/Layouts/Login/Login';
 import Register from './components/Layouts/Register/Register';
 import Cart from './pages/Cart';
+import Details from './pages/Details';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/menu' element={<Menu />}></Route>
           <Route path='/cart' element={<Cart/>}></Route>
+          <Route path='/details' element={<Details/>}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='*' element={<NotFound />}></Route>

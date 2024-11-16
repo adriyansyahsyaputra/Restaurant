@@ -1,106 +1,125 @@
-  import React from "react";
-  import Button from "../../Elements/Button/Button";
-  import { useCart } from "../../../contexts/cartContext"
+import React from "react";
+import Button from "../../Elements/Button/Button";
+import { useCart } from "../../../contexts/cartContext";
 
-  export default function CartResult() {
-  const { cart, removeFromCart } = useCart();
+export default function CartResult() {
+  const { cart, removeFromCart, updateQuantity } = useCart();
 
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
 
-
   return (
     <div>
       <Header />
-      <div className="mt-10">
-        <table className="w-full border border-gray-200 font-inter text-sm text-left text-gray-700">
-          <thead className="bg-gray-200 text-gray-800 font-semibold">
-            <tr>
-              <th className="px-4 py-3 border-b border-gray-300">No</th>
-              <th className="px-4 py-3 border-b border-gray-300">Product</th>
-              <th className="px-4 py-3 border-b border-gray-300">Harga</th>
-              <th className="px-4 py-3 border-b border-gray-300">Jumlah</th>
-              <th className="px-4 py-3 border-b border-gray-300">
-                Total Harga
-              </th>
-              <th className="px-4 py-3 border-b border-gray-300">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.map((item, index) => (
-              <tr key={item.id} className="hover:bg-gray-100">
-                <td className="px-4 py-3 border-b border-gray-300">
-                  {index + 1}
-                </td>
-                <td className="px-4 py-3 border-b border-gray-300">
-                  {item.name}
-                </td>
-                <td className="px-4 py-3 border-b border-gray-300">
-                  {item.price.toLocaleString("id-ID", {
-                    style: "currency",
-                    currency: "IDR",
-                  })}
-                </td>
-                <td className="px-4 py-3 border-b border-gray-300">
-                  {item.quantity}
-                </td>
-                <td className="px-4 py-3 border-b border-gray-300">
-                  {(item.price * item.quantity).toLocaleString("id-ID", {
-                    style: "currency",
-                    currency: "IDR",
-                  })}
-                </td>
-                <td className="px-4 py-3 border-b border-gray-300">
-                  <Button
-                    classname="bg-red-500 px-3 py-1 hover:bg-red-600"
-                    onClick={() => removeFromCart(item.id)}>
-                    Hapus
-                  </Button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-          <tfoot className="bg-gray-200 text-gray-800 font-semibold">
-            <tr>
-              <td
-                colSpan="3"
-                className="px-4 py-3 text-right border-t border-gray-300">
-                Total Keseluruhan
-              </td>
-              <td className="px-4 py-3 border-t border-gray-300">
-                {totalPrice.toLocaleString("id-ID", {
-                  style: "currency",
-                  currency: "IDR",
-                })}
-              </td>
-              <td className="px-4 py-3 border-t border-gray-300">
-                <Button classname="bg-green-500 px-3 py-1 hover:bg-green-600">
-                  Checkout
+      <div className="container mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {cart.map((item) => (
+            <div
+              key={item.id}
+              className="border border-gray-200 rounded-lg shadow-sm p-4 flex flex-col items-start bg-white">
+              <div className="flex items">
+                {/* Gambar Produk */}
+                <img
+                  src={`public/img/${item.image}`}
+                  alt={item.name}
+                  className="w-20 h-20 object-cover rounded-md mb-4"
+                />
+                {/* Detail Produk */}
+                <div className="flex-1 w-full ml-4">
+                  <h2 className="text-sm font-semibold text-gray-800">
+                    {item.name}
+                  </h2>
+                  <p className="text-xs text-gray-500">
+                    Harga:{" "}
+                    {item.price.toLocaleString("id-ID", {
+                      style: "currency",
+                      currency: "IDR",
+                    })}
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Jumlah: {item.quantity}
+                  </p>
+                  {/* Button plus & minus */}
+                  <div className="flex items-center right-0 mt-2 space-x-2">
+                    {/* Tombol Plus dan Minus */}
+                    <button
+                      className="px-2 bg-gray-300 text-gray-700 hover:bg-gray-400"
+                      onClick={() =>
+                        updateQuantity(item.id, item.quantity - 1)
+                      }>
+                      -
+                    </button>
+                    <span className="px-4 bg-gray-100 text-gray-700 border border-gray-300">
+                      {item.quantity}
+                    </span>
+                    <button
+                      className="px-2 bg-gray-300 text-gray-700 hover:bg-gray-400"
+                      onClick={() =>
+                        updateQuantity(item.id, item.quantity + 1)
+                      }>
+                      +
+                    </button>
+                  </div>
+                  
+                  <p className="text-sm font-semibold text-red-500 mt-2">
+                    Total:{" "}
+                    {(item.price * item.quantity).toLocaleString("id-ID", {
+                      style: "currency",
+                      currency: "IDR",
+                    })}
+                  </p>
+                </div>
+              </div>
+
+              {/* Tombol Aksi */}
+              <div className="flex items-center mt-2 w-full space-x-2">
+                <Button
+                  classname="flex-1 bg-red-500 text-white text-sm px-3 py-1 rounded-lg hover:bg-red-600"
+                  onClick={() => removeFromCart(item.id)}>
+                  Hapus
                 </Button>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Total Keseluruhan */}
+        <div className="mt-6 border-t pt-4">
+          <div className="flex justify-between items-center">
+            <p className="text-gray-700 font-semibold text-lg">
+              Total Keseluruhan
+            </p>
+            <p className="text-red-500 font-semibold text-xl">
+              {totalPrice.toLocaleString("id-ID", {
+                style: "currency",
+                currency: "IDR",
+              })}
+            </p>
+          </div>
+          {/* Tombol Checkout */}
+          <Button classname="mt-4 bg-orange-500 text-white text-lg px-6 py-2 rounded-lg hover:bg-orange-600 w-full md:w-auto">
+            Checkout
+          </Button>
+        </div>
       </div>
     </div>
   );
-  }
+}
 
-  function Header() {
-    return (
-      <div className="container flex justify-between items-center font-inter mt-28">
-        <div>
-          <h1 className="text-xl md:text-2xl font-semibold">Keranjang Belanja</h1>
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition duration-300"
-          />
-        </div>
+function Header() {
+  return (
+    <div className="container flex justify-between items-center font-inter mt-28">
+      <div>
+        <h1 className="text-xl md:text-2xl font-semibold">Keranjang Belanja</h1>
       </div>
-    );
-  }
+      <div>
+        <input
+          type="text"
+          placeholder="Search..."
+          className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition duration-300"
+        />
+      </div>
+    </div>
+  );
+}

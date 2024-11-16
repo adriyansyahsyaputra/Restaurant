@@ -27,6 +27,7 @@ export default function VariousDrinks() {
                 currency: "IDR",
               })}
               image={drink.image}
+              quantity={drink.quantity}
             />
           </div>
         ))}

@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { getDataFoods } from "../../../utils/dataFoods";
+import { Link } from "react-router-dom";
 
 export default function FavouriteFoods() {
   const [foods, setFavouriteFoods] = useState([]);
@@ -10,7 +11,6 @@ export default function FavouriteFoods() {
       .slice(0, 4);
     setFavouriteFoods(favouriteFoods);
   }, []);
-
 
   return (
     <>
@@ -26,12 +26,14 @@ export default function FavouriteFoods() {
         <section className="mt-5 grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-2">
           {foods.map((food) => (
             <div className="text-center" key={food.id}>
-              <img
-                src={`/img/${food.image}`}
-                alt="Produk 1"
-                className="rounded-full mx-auto mb-2 w-48 h-48 object-cover"
-              />
-              <h5 className="text-lg font-serif font-normal">{food.name}</h5>
+              <Link to={`/details`} state={food}>
+                <img
+                  src={`/img/${food.image}`}
+                  alt="Produk 1"
+                  className="rounded-full mx-auto mb-2 w-48 h-48 object-cover"
+                />
+                <h5 className="text-lg font-serif font-normal">{food.name}</h5>
+              </Link>
               <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
                 {parseInt(food.price).toLocaleString("id-ID", {
                   style: "currency",

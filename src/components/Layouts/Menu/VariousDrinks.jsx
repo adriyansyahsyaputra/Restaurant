@@ -28,6 +28,7 @@ export default function VariousDrinks() {
               })}
               image={drink.image}
               quantity={drink.quantity}
+              description={drink.description}
             />
           </div>
         ))}

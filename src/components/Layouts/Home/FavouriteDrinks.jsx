@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getDataDrinks } from "../../../utils/dataDrinks";
+import { Link } from "react-router-dom";
 
 export default function FavouriteDrinks() {
   const [drinks, setFavouriteDrinks] = useState([]);
@@ -25,12 +26,14 @@ export default function FavouriteDrinks() {
         <section className="mt-5 grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-2">
           {drinks.map((drink) => (
             <div className="text-center" key={drink.id}>
-              <img
-                src={`/public/img/${drink.image}`}
-                alt="Produk 1"
-                className="rounded-full mx-auto mb-2 w-48 h-48 object-cover"
-              />
-              <h5 className="text-lg font-serif font-normal">{drink.name}</h5>
+              <Link to={`/details`} state={drink}>
+                <img
+                  src={`/public/img/${drink.image}`}
+                  alt="Produk 1"
+                  className="rounded-full mx-auto mb-2 w-48 h-48 object-cover"
+                />
+                <h5 className="text-lg font-serif font-normal">{drink.name}</h5>
+              </Link>
               <p className="text-red-500 text-base tracking-wide font-semibold font-sans">
                 {parseInt(drink.price).toLocaleString("id-ID", {
                   style: "currency",

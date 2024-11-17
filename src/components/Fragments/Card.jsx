@@ -4,14 +4,14 @@ import { useCart } from "../../contexts/cartContext";
 import { Link } from "react-router-dom";
 
 export default function Card(props) {
-  const { name, rating, reviewer, price, image, id, quantity } = props;
+  const { name, rating, reviewer, price, image, id, quantity, description } = props;
   const { addToCart } = useCart();
 
   return (
     <>
       <Link
         to="/details"
-        state={{ id, name, rating, reviewer, price, image, quantity }}>
+        state={{ id, name, rating, reviewer, price, image, quantity, description }}>
         <img
           src={`/public/img/${image}`}
           alt={name}
@@ -20,7 +20,11 @@ export default function Card(props) {
       </Link>
 
       <div className="p-4 font-inter">
-        <h1 className="text-lg">{name}</h1>
+        <Link
+          to={"/details"}
+          state={{ id, name, rating, reviewer, price, image, quantity, description }}>
+          <h1 className="text-lg">{name}</h1>
+        </Link>
         <p className="text-xs">
           {rating} ({reviewer})
         </p>

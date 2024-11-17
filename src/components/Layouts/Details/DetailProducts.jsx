@@ -9,7 +9,7 @@ export default function DetailProducts() {
     const data = location.state;
     const { addToCart } = useCart();
 
-    const { id, name, rating, reviewer, price, image, quantity } = data;
+    const { id, name, rating, reviewer, price, image, quantity, description } = data;
 
   return (
     <>
@@ -24,8 +24,7 @@ export default function DetailProducts() {
             {name}
           </h2>
           <p className="text-sm md:text-base text-gray-700 mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quia
-            minima adipisci ea facere architecto itaque ipsa ex amet ipsum?
+            {description}
           </p>
           <div className="mt-3 text-gray-700 text-sm md:text-base">
             <p>
@@ -37,7 +36,7 @@ export default function DetailProducts() {
                 currency: "IDR",
               })}
             </p>
-            <p className="mt-1 font-semibold">Sisa barang: {quantity}</p>
+            <p className="mt-1 font-semibold">Sisa Stok: {quantity}</p>
           </div>
           <Button
             classname="bg-red-500 px-4 py-2 mt-4 hover:bg-red-600"

@@ -1,17 +1,39 @@
 import React from "react";
 import Button from "../Elements/Button/Button";
 import { useCart } from "../../contexts/cartContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Card(props) {
-  const { name, rating, reviewer, price, image, id, quantity, description } = props;
+  const { name, rating, reviewer, price, image, id, quantity, description } =
+    props;
   const { addToCart } = useCart();
+  const navigate = useNavigate(); // untuk navigasi programatik
+  const storedUser = localStorage.getItem("users"); // Ambil data user dari localStorage
+
+  const handleAddToCart = () => {
+    if (!storedUser) {
+      // Jika user belum login, arahkan ke halaman login
+      navigate("/login");
+    } else {
+      // Jika user sudah login, jalankan fungsi addToCart
+      addToCart({ id, name, price, image });
+    }
+  };
 
   return (
     <>
       <Link
         to="/details"
-        state={{ id, name, rating, reviewer, price, image, quantity, description }}>
+        state={{
+          id,
+          name,
+          rating,
+          reviewer,
+          price,
+          image,
+          quantity,
+          description,
+        }}>
         <img
           src={`/public/img/${image}`}
           alt={name}
@@ -22,7 +44,16 @@ export default function Card(props) {
       <div className="p-4 font-inter">
         <Link
           to={"/details"}
-          state={{ id, name, rating, reviewer, price, image, quantity, description }}>
+          state={{
+            id,
+            name,
+            rating,
+            reviewer,
+            price,
+            image,
+            quantity,
+            description,
+          }}>
           <h1 className="text-lg">{name}</h1>
         </Link>
         <p className="text-xs">
@@ -37,7 +68,8 @@ export default function Card(props) {
         <Button
           type="button"
           classname="bg-red-500 px-3 py-2 mt-4 hover:bg-red-600"
-          onClick={() => addToCart({ id, name, price, image })}>
+          onClick={handleAddToCart}>
+          {" "}
           Add to Cart!
         </Button>
       </div>

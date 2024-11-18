@@ -6,6 +6,8 @@ export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const headerRef = useRef(null);
   const [isFixed, setIsFixed] = useState(false);
+  const [user, setUser] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +29,29 @@ export default function Navbar() {
     };
   }, []);
 
+  // Mengambil data user dari localStorage
+  useEffect(() => {
+    const storedUsers = localStorage.getItem("users");
+    if (storedUsers) {
+      const users = JSON.parse(storedUsers);
+      if (users.length > 0) {
+        setUser(users[0]);
+      }
+    }
+  }, []);
+
   function toggleHamburger() {
     setIsHamburgerOpen(!isHamburgerOpen);
+  }
+
+  function toggleDropdown() {
+    setIsDropdownOpen(!isDropdownOpen);
+  }
+
+  function handleLogout() {
+    localStorage.removeItem("users");
+    setUser(null);
+    window.location.href = "/";
   }
 
   return (
@@ -68,25 +91,100 @@ export default function Navbar() {
                 className={`${
                   isHamburgerOpen ? "block" : "hidden"
                 } absolute py-5 bg-white shadow-lg rounded-lg max-w-64 w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none`}>
-                <ul className="block lg:flex">
-                  <li className="group">
+                <ul className="block lg:flex lg:items-center">
+                  <li className="group lg:inline-block">
                     <MenuNavbar title="Home" link="/" />
                   </li>
-                  <li className="group">
+                  <li className="group lg:inline-block">
                     <MenuNavbar title="Menu" link="/menu" />
                   </li>
-                  <li className="group">
+                  <li className="group lg:inline-block">
                     <MenuNavbar title="About" link="/about" />
                   </li>
-                  <li className="group">
+                  <li className="group lg:inline-block">
                     <MenuNavbar title="Contact" link="/contact" />
                   </li>
 
                   {/* <!-- Cart for desktop --> */}
                   <CartNav classname="hidden lg:block" />
-                  <li className="group">
-                    <MenuNavbar title="Login" link="/login" />
-                  </li>
+
+                  {user ? (
+                    <div className="relative ml-7 lg:ml-0">
+                      <div
+                        onClick={toggleDropdown}
+                        className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition-all duration-300">
+                        <img
+                          src="/public/img/default.jpg"
+                          alt="Profile"
+                          className="w-10 h-10 rounded-full object-cover border-2 border-gray-300 group-hover:border-blue-500"
+                        />
+                        <div>
+                          <p className="text-sm font-semibold text-gray-800">
+                            {user.username || "User"}
+                          </p>
+                          <p className="text-xs text-gray-500">Online</p>
+                        </div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`w-4 h-4 ml-2 transform transition-transform ${
+                            isDropdownOpen ? "rotate-180" : ""
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+
+                      {isDropdownOpen && (
+                        <div className="absolute right-0 mt-2 w-56 bg-white shadow-xl rounded-lg border border-gray-100 z-50 overflow-hidden">
+                          <div className="px-4 py-3 border-b border-gray-200">
+                            <p className="text-sm font-medium text-gray-900">
+                              {user.username}
+                            </p>
+                            <p className="text-xs text-gray-500 truncate">
+                              {user.email}
+                            </p>
+                          </div>
+                          <ul className="py-1">
+                            <li>
+                              <a
+                                href="/profile"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
+                                Profile
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="/settings"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
+                                Settings
+                              </a>
+                            </li>
+                            <li>
+                              <hr className="my-1 border-gray-200" />
+                            </li>
+                            <li>
+                              <button
+                                onClick={handleLogout}
+                                className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
+                                Logout
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <li className="group lg:inline-block">
+                      <MenuNavbar title="Login" link="/login" />
+                    </li>
+                  )}
                 </ul>
               </nav>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../../Elements/Button/Button";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { useCart } from "../../../contexts/cartContext";
 
 export default function DetailProducts() {
@@ -8,8 +8,19 @@ export default function DetailProducts() {
     const navigate = useNavigate();
     const data = location.state;
     const { addToCart } = useCart();
+    const storedUser = localStorage.getItem("users");
 
     const { id, name, rating, reviewer, price, image, quantity, description } = data;
+
+    const handleAddToCart = () => {
+      if (!storedUser) {
+        // Jika user belum login, arahkan ke halaman login
+        navigate("/login");
+      } else {
+        // Jika user sudah login, jalankan fungsi addToCart
+        addToCart({ id, name, price, image });
+      }
+    };
 
   return (
     <>
@@ -40,7 +51,7 @@ export default function DetailProducts() {
           </div>
           <Button
             classname="bg-red-500 px-4 py-2 mt-4 hover:bg-red-600"
-            onClick={() => addToCart({ id, name, price, image })}>
+            onClick={handleAddToCart}>
             Add to Cart!
           </Button>
         </div>

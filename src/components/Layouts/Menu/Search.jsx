@@ -28,7 +28,7 @@ export default function Search({ setIsSearching }) {
     }, 300);
 
     return () => clearTimeout(handler); // Membersihkan timeout jika input berubah
-  }, [query, combinedData]);
+  }, [query, combinedData, setIsSearching]);
 
   return (
     <div>

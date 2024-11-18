@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../Elements/Button/Button";
 import Label from "../../Elements/Input/Label";
 import Input from "../../Elements/Input/Input";
+import InputLabel from "../../Elements/Input";
 
 export default function ContactUs() {
   return (
@@ -12,48 +13,48 @@ export default function ContactUs() {
         <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-4">
           <div className="lg:mr-3">
             <form action="">
-              <Label htmlFor="nama" classname="mb-1">
+              <Label htmlFor="nama" className="mb-1">
                 Nama
               </Label>
               <Input
                 type="text"
                 id="nama"
                 placeholder="Input your name..."
-                classname="mb-3"></Input>
+                className="mb-3"></Input>
 
               <Label
                 htmlFor="email"
-                classname="font-semibold mb-1 after:content-['*'] after:text-pink-500 after:ml-0.5">
+                className="font-semibold mb-1 after:content-['*'] after:text-pink-500 after:ml-0.5">
                 Email
               </Label>
               <Input
                 type="email"
                 id="email"
                 placeholder="JohnDoe@gmail.com"
-                classname="text-sm invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer"></Input>
+                className="text-sm invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer"></Input>
               <p className="text-xs m-1 text-pink-700 invisible peer-invalid:visible">
                 Email tidak valid!
               </p>
 
-              <Label htmlFor="phone" classname="mb-1">
+              <Label htmlFor="phone" className="mb-1">
                 Phone
               </Label>
               <Input
                 type="number"
                 id="phone"
-                classname="mb-3"
+                className="mb-3"
                 placeholder="+628123456789"></Input>
 
-              <Label htmlFor="perihal" classname="mb-1">
+              <Label htmlFor="perihal" className="mb-1">
                 Subject
               </Label>
               <Input
                 type="text"
                 id="perihal"
                 placeholder="Input your subject..."
-                classname="mb-3"></Input>
+                className="mb-3"></Input>
 
-              <Label htmlFor="pesan" classname="mb-1">
+              <Label htmlFor="pesan" className="mb-1">
                 Message
               </Label>
               <textarea

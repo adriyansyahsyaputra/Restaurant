@@ -3,12 +3,12 @@ import Input from "./Input";
 import Label from "./Label";
 
 export default function InputLabel(props) {
-    const {htmlfor, label, type, id, placeholder} = props
+    const {htmlFor, label, type, id, placeholder, value, onChange, className} = props
 
     return (
         <div className="mb-4">
-            <Label htmlfor={htmlfor}>{label}</Label>
-            <Input type={type} id={id} placeholder={placeholder}></Input>
+            <Label htmlFor={htmlFor}>{label}</Label>
+            <Input type={type} id={id} placeholder={placeholder} value={value} onChange={onChange}className={className}></Input>
         </div>
     )
 

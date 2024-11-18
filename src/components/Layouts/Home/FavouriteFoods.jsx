@@ -30,7 +30,7 @@ export default function FavouriteFoods() {
                 <img
                   src={`/img/${food.image}`}
                   alt="Produk 1"
-                  className="rounded-full mx-auto mb-2 w-48 h-48 object-cover"
+                  className="rounded-full mx-auto mb-2 w-32 h-32 md:w-48 md:h-48 object-cover"
                 />
                 <h5 className="text-lg font-serif font-normal">{food.name}</h5>
               </Link>

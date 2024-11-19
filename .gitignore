@@ -14,12 +14,7 @@ dist-ssr
 lib
 utils
 components.json
-jsconfig.json
-package-lock.json
-package.json
-vite.config.js
-tailwind.config.js
-eslint.config.js
+jsconfig.json      
 
 # Editor directories and files
 .vscode/*

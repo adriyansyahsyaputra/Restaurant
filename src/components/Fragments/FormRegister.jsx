@@ -104,7 +104,7 @@ export default function FormRegister() {
             placeholder="JohnDoe@gmail.com"
             className="text-sm invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}  
           />
           <p className="text-xs mt-1 text-pink-700 invisible peer-invalid:visible">
             Email tidak valid!

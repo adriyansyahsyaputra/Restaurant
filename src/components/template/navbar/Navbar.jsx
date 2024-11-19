@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import MenuNavbar from "../../Elements/Menu/Menu";
 import CartNav from "../../Fragments/CartNav";
 import Alert from "@/components/Fragments/Alert";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
@@ -194,7 +195,9 @@ export default function Navbar() {
                     </div>
                   ) : (
                     <li className="group lg:inline-block">
-                      <MenuNavbar title="Login" link="/login" />
+                      <Link to="/login">
+                        <button className="text-base font-inter font-semibold mt-1 text-slate-100 bg-red-500 py-2 mx-8 px-4 hover:bg-red-600 rounded-lg transition-all duration-300">Login</button>
+                      </Link>
                     </li>
                   )}
                 </ul>

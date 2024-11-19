@@ -103,11 +103,11 @@ export default function Footer() {
         <div className="font-serif mb-6 lg:mb-0 md:mt-9 md:ml-12 lg:ml-0 lg:mt-0">
           <h2 className="text-xl font-semibold mb-2">Location</h2>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1990.509305351088!2d102.2763523930264!3d-3.806055306065295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b00c80e634df%3A0x99d9d1ad07a8faab!2sNusa%20Indah%2C%20Kec.%20Ratu%20Agung%2C%20Kota%20Bengkulu%2C%20Bengkulu!5e0!3m2!1sid!2sid!4v1727091062899!5m2!1sid!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.9740594303958!2d110.36326270972201!3d-7.792571077304333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5742a17e8c33%3A0xf92dc9a55003beb0!2sMalioboro%20Yogyakarta!5e0!3m2!1sid!2sid!4v1732020092083!5m2!1sid!2sid"
             width="270"
             height="160"
             style={{ border: 0 }}
-            allowFullScreen
+            allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

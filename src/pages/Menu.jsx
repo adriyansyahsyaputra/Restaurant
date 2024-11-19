@@ -4,6 +4,7 @@ import VariousDrinks from "../components/Layouts/Menu/VariousDrinks";
 import VariousFoods from "../components/Layouts/Menu/VariousFoods";
 import Footer from "../components/template/footer/Footer";
 import Navbar from "../components/template/Navbar/Navbar";
+import Hero from "@/components/Fragments/Hero";
 
 export default function Menu() {
   const [isSearching, setIsSearching] = useState(false);
@@ -11,6 +12,11 @@ export default function Menu() {
   return (
     <>
       <Navbar />
+      <Hero 
+      title="Our Menu"
+      subtitle="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime dolor dignissimos fugit quaerat error quae!"
+      image="/img/menu2.jpg"
+      />
       <main className="container mt-16 px-6 md:px-12">
         {/* Komponen Search */}
         <Search setIsSearching={setIsSearching} />

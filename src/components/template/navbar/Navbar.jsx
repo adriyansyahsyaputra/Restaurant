@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import MenuNavbar from "../../Elements/Menu/Menu";
 import CartNav from "../../Fragments/CartNav";
+import Alert from "@/components/Fragments/Alert";
 
 export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
@@ -8,6 +9,7 @@ export default function Navbar() {
   const [isFixed, setIsFixed] = useState(false);
   const [user, setUser] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [alert, setAlert] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,14 +31,18 @@ export default function Navbar() {
     };
   }, []);
 
-  // Mengambil data user dari localStorage
+  // Mengambil data user jika token ada
   useEffect(() => {
-    const storedUsers = localStorage.getItem("users");
-    if (storedUsers) {
-      const users = JSON.parse(storedUsers);
-      if (users.length > 0) {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const storedUsers = localStorage.getItem("users");
+      if (storedUsers) {
+        const users = JSON.parse(storedUsers);
+        // Asumsi user pertama adalah user yang login
         setUser(users[0]);
       }
+    } else {
+      setUser(null);
     }
   }, []);
 
@@ -49,9 +55,15 @@ export default function Navbar() {
   }
 
   function handleLogout() {
-    localStorage.removeItem("users");
+    setAlert(true);
+
+    setTimeout(() => {
+      setAlert(false);
+      window.location.href = "/";
+    }, 2000);
+
+    localStorage.removeItem("token");
     setUser(null);
-    window.location.href = "/";
   }
 
   return (
@@ -64,7 +76,7 @@ export default function Navbar() {
         <div className="container">
           <div className="flex items-center justify-between relative">
             <div className="px-4">
-              <a href="#" className="font-bold text-xl text-red-500 block py-6">
+              <a href="/" className="font-bold text-xl text-red-500 block py-6">
                 Sajian du Monde
               </a>
             </div>
@@ -82,10 +94,10 @@ export default function Navbar() {
                 <span className="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
               </button>
 
-              {/* <!-- Cart for mobile & hidden on desktop --> */}
+              {/* Cart for mobile & hidden on desktop */}
               <CartNav classname="block mr-5 lg:hidden" />
 
-              {/* <!-- Nav Menu --> */}
+              {/* Nav Menu */}
               <nav
                 id="nav-menu"
                 className={`${
@@ -105,7 +117,7 @@ export default function Navbar() {
                     <MenuNavbar title="Contact" link="/contact" />
                   </li>
 
-                  {/* <!-- Cart for desktop --> */}
+                  {/* Cart for desktop */}
                   <CartNav classname="hidden lg:block" />
 
                   {user ? (
@@ -191,6 +203,11 @@ export default function Navbar() {
           </div>
         </div>
       </header>
+      <Alert
+        isOpen={alert}
+        title="Logout Berhasil"
+        description="Terimakasih telah menggunakan layanan kami"
+      />
     </>
   );
 }

@@ -1,15 +1,40 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
+// Custom hook untuk mempermudah akses context
 // eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    // Ambil token user dari localStorage
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Jika token tidak ada, hapus key cart dari localStorage
+      localStorage.removeItem("cart");
+      return [];
+    }
+
+    // Ambil data cart dari localStorage jika token ada
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      // Jika token tidak ada, hapus key cart dari localStorage
+      localStorage.removeItem("cart");
+    } else {
+      // Jika token ada, simpan data cart ke localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart]);
 
   const addToCart = (item) => {
-    const price = parseInt(item.price)
+    const price = parseInt(item.price);
 
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
@@ -42,7 +67,6 @@ export function CartProvider({ children }) {
       );
     });
   };
-
 
   return (
     <CartContext.Provider

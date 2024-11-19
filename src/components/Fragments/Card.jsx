@@ -7,8 +7,8 @@ export default function Card(props) {
   const { name, rating, reviewer, price, image, id, quantity, description } =
     props;
   const { addToCart } = useCart();
-  const navigate = useNavigate(); // untuk navigasi programatik
-  const storedUser = localStorage.getItem("users"); // Ambil data user dari localStorage
+  const navigate = useNavigate();
+  const storedUser = localStorage.getItem("token");
 
   const handleAddToCart = () => {
     if (!storedUser) {

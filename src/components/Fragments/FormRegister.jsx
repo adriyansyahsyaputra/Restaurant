@@ -4,6 +4,7 @@ import Label from "../Elements/Input/Label";
 import Input from "../Elements/Input/Input";
 import Button from "../Elements/Button/Button";
 import InputLabel from "../Elements/Input";
+import Alert from "./Alert";
 
 export default function FormRegister() {
   const [isPassword, setIsPassword] = useState(false);
@@ -14,6 +15,7 @@ export default function FormRegister() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+  const [alert, setAlert] = useState(false);
 
   const togglePassword = () => {
     setIsPassword((prevState) => !prevState);
@@ -37,7 +39,9 @@ export default function FormRegister() {
     }
 
     // Validasi jika username sudah ada
-    const isUserExist = users.some((user) => user.username === username || user.email === email);
+    const isUserExist = users.some(
+      (user) => user.username === username || user.email === email
+    );
     if (isUserExist) {
       setMessage("Username or email already exists!");
       return;
@@ -54,7 +58,7 @@ export default function FormRegister() {
     localStorage.setItem("users", JSON.stringify([...users, newUser]));
 
     // Tampilkan pesan sukses dan reset input
-    setMessage("Registration successful!");
+    setAlert(true);
     setUsername("");
     setEmail("");
     setPassword("");
@@ -62,23 +66,30 @@ export default function FormRegister() {
 
     // Pindahkan user ke halaman login setelah delay untuk melihat pesan
     setTimeout(() => {
+      setAlert(false);
       navigate("/login");
-    }, 1500);
+    }, 2500);
   }
 
   return (
     <>
+      <Alert
+        isOpen={alert}
+        title="Registrasi berhasil"
+        description="Akun Anda telah berhasil dibuat. Silahkan login untuk
+                  melanjutkan."
+      />
       <form action="" onSubmit={handleRegister}>
         <div className="mb-4">
-          <InputLabel 
-          htmlFor="username"
-          label="Username"
-          type="text"
-          id="username"
-          placeholder="Enter your name"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="mt-1"
+          <InputLabel
+            htmlFor="username"
+            label="Username"
+            type="text"
+            id="username"
+            placeholder="Enter your name"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="mt-1"
           />
         </div>
         <div>
@@ -100,15 +111,15 @@ export default function FormRegister() {
           </p>
         </div>
         <div className="mb-4 relative">
-          <InputLabel 
-          htmlFor="password"
-          label="Password"
-          type={isPassword ? "text" : "password"}
-          id="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="mt-1"
+          <InputLabel
+            htmlFor="password"
+            label="Password"
+            type={isPassword ? "text" : "password"}
+            id="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="mt-1"
           />
           <button
             type="button"
@@ -127,15 +138,15 @@ export default function FormRegister() {
         </div>
 
         <div className="mb-4 relative">
-          <InputLabel 
-          htmlFor="confirmPassword"
-          label="Confirm Password"
-          type={isConfirmPassword ? "text" : "password"}
-          id="confirmPassword"
-          placeholder="Confirm your password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          className="mt-1"
+          <InputLabel
+            htmlFor="confirmPassword"
+            label="Confirm Password"
+            type={isConfirmPassword ? "text" : "password"}
+            id="confirmPassword"
+            placeholder="Confirm your password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="mt-1"
           />
           <button
             type="button"

@@ -14,6 +14,12 @@ export default function FormLogin() {
     setIsPasswordVisible((prevState) => !prevState);
   };
 
+  // Fungsi untuk menghasilkan token ketika login
+  function generateToken() {
+    const token = Math.random().toString(36).substring(2, 15);
+    return token;
+  }
+
   function handleLogin(e) {
     e.preventDefault();
 
@@ -32,6 +38,7 @@ export default function FormLogin() {
 
     if (user) {
       // Login berhasil, arahkan ke halaman utama
+      localStorage.setItem("token", generateToken());
       setUsername("");
       setPassword("");
 

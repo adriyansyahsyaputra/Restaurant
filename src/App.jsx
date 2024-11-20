@@ -10,6 +10,7 @@ import Cart from './pages/Cart';
 import Details from './pages/Details';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Invoice from './pages/Invoice';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/details' element={<Details/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/about' element={<About/>}></Route>
+          <Route path='/invoice' element={<Invoice/>}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='*' element={<NotFound />}></Route>

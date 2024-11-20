@@ -73,27 +73,22 @@ export default function Footer() {
           <h2 className="text-xl font-semibold mb-2">Quick Links</h2>
           <ul className="grid grid-cols-2 gap-2 lg:text-center lg:grid-cols-1">
             <li>
-              <a href="#" className="text-sm hover:text-red-500">
+              <a href="/" className="text-sm hover:text-red-500">
                 Home
               </a>
             </li>
             <li>
-              <a href="#about" className="text-sm hover:text-red-500">
+              <a href="/about" className="text-sm hover:text-red-500">
                 About
               </a>
             </li>
             <li>
-              <a href="#menu" className="text-sm hover:text-red-500">
+              <a href="/menu" className="text-sm hover:text-red-500">
                 Menu
               </a>
             </li>
             <li>
-              <a href="#" className="text-sm hover:text-red-500">
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="text-sm hover:text-red-500">
+              <a href="/contact" className="text-sm hover:text-red-500">
                 Contact
               </a>
             </li>

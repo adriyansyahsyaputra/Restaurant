@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../Elements/Button/Button";
 import { useCart } from "../../../contexts/cartContext";
+import { Link } from "react-router-dom";
 
 export default function CartResult() {
   const { cart, removeFromCart, updateQuantity } = useCart();
@@ -62,7 +63,6 @@ export default function CartResult() {
                       +
                     </button>
                   </div>
-                  
                   <p className="text-sm font-semibold text-red-500 mt-2">
                     Total:{" "}
                     {(item.price * item.quantity).toLocaleString("id-ID", {
@@ -98,9 +98,11 @@ export default function CartResult() {
             </p>
           </div>
           {/* Tombol Checkout */}
-          <Button classname="mt-4 bg-orange-500 text-white text-lg px-6 py-2 rounded-lg hover:bg-orange-600 w-full md:w-auto">
-            Checkout
-          </Button>
+          <Link to="/invoice">
+            <Button classname="mt-4 bg-orange-500 text-white text-lg px-6 py-2 rounded-lg hover:bg-orange-600 w-full md:w-auto">
+              Checkout
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

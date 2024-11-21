@@ -19,8 +19,8 @@ export default function FavouriteDrinks() {
         <div className="text-center">
           <h3 className="font-thin text-xl mb-2">Favourite Drinks</h3>
           <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            alias veniam unde ea iusto quidem!
+            Here we show you some of our customers favorite drinks at our
+            restaurant
           </p>
         </div>
         <section className="mt-5 grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-2">

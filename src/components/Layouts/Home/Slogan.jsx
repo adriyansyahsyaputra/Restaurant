@@ -13,9 +13,9 @@ export default function Slogan() {
         </div>
         <div className="lg:w-1/2">
           <p className="text-base font-light text-slate-800">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis saepe omnis, error molestiae quidem quas quo vitae.
-            Corporis accusantium expedita at aperiam officia dolor enim.
+            Enjoy dishes that combine the rich flavors of Indonesian cuisine
+            with the elegance of European cuisine. We offer a unique culinary
+            experience well worth savoring.
           </p>
         </div>
       </div>

@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Hero({ title, subtitle, image }) {
   return (
-    <div className="relative bg-red-500 text-white mt-20 h-80 md:h-[450px]">
+    <div className="relative bg-red-400 text-white mt-20 h-80 md:h-[450px]">
       <div className="absolute inset-0">
         <img
           src={image}
           alt="Contact Hero"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-60"
         />
       </div>
       <div className="relative max-w-7xl mx-auto py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">

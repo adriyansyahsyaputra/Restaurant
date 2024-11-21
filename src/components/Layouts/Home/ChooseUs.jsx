@@ -8,57 +8,57 @@ export default function Reason() {
         <div className="text-center">
           <h3 className="font-thin text-xl mb-2">Why Choose Us?</h3>
           <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            alias veniam unde ea iusto quidem!
+            Discover an exceptional dining experience with fresh ingredients,
+            delicious flavors, and outstanding service tailored just for you.
           </p>
         </div>
         <section className="grid gap-3 mt-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="p-4 text-center">
             <img
               src="./public/img/icon/discount.png"
-              alt=""
+              alt="Best Offer"
               className="w-20 mx-auto mb-2"
             />
-            <h5 className="font-normal text-xl font-serif">Best Over</h5>
+            <h5 className="font-normal text-xl font-serif">Best Offer</h5>
             <p className="tracking-wider text-sm">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum nam
-              quod assumenda nostrum repellendus quis.
+              Enjoy the best deals and exclusive promotions that bring
+              exceptional value to your dining experience.
             </p>
           </div>
           <div className="p-4 text-center">
             <img
               src="./public/img/icon/vegetables.png"
-              alt=""
+              alt="Fresh Ingredients"
               className="w-20 mx-auto mb-2"
             />
             <h5 className="font-normal text-xl font-serif">Fresh</h5>
             <p className="tracking-wider text-sm">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum nam
-              quod assumenda nostrum repellendus quis.
+              We use only the freshest ingredients to ensure every dish bursts
+              with natural flavors and quality.
             </p>
           </div>
           <div className="p-4 text-center">
             <img
               src="./public/img/icon/food.png"
-              alt=""
+              alt="Delicious Food"
               className="w-20 mx-auto mb-2"
             />
             <h5 className="font-normal text-xl font-serif">Delicious</h5>
             <p className="tracking-wider text-sm">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum nam
-              quod assumenda nostrum repellendus quis.
+              Indulge in our carefully crafted menu featuring dishes that
+              delight your taste buds with every bite.
             </p>
           </div>
           <div className="p-4 text-center">
             <img
               src="./public/img/icon/fast-time.png"
-              alt=""
+              alt="Fast Serving"
               className="w-20 mx-auto mb-2"
             />
-            <h5 className="font-normal text-xl font-serif">Fast serving</h5>
+            <h5 className="font-normal text-xl font-serif">Fast Serving</h5>
             <p className="tracking-wider text-sm">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum nam
-              quod assumenda nostrum repellendus quis.
+              Experience swift and efficient service, ensuring your meals are
+              served hot and fresh without delay.
             </p>
           </div>
         </section>

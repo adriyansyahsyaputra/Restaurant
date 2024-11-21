@@ -12,10 +12,10 @@ export default function Menu() {
   return (
     <>
       <Navbar />
-      <Hero 
-      title="Our Menu"
-      subtitle="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime dolor dignissimos fugit quaerat error quae!"
-      image="/img/menu2.jpg"
+      <Hero
+        title="Our Menu"
+        subtitle="Explore our diverse menu crafted with the finest ingredients, blending traditional recipes with modern culinary techniques. From hearty meals to delightful desserts."
+        image="/img/menu2.jpg"
       />
       <main className="container mt-16 px-6 md:px-12">
         {/* Komponen Search */}

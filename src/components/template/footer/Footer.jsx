@@ -27,7 +27,7 @@ export default function Footer() {
               <a
                 href="http://www.facebook.com"
                 className="text-sm hover:text-red-500">
-                My Restaurant
+                Sajian du Monde
               </a>
             </li>
             <li className="flex items-center">
@@ -39,7 +39,7 @@ export default function Footer() {
               <a
                 href="http://www.instagram.com"
                 className="text-sm hover:text-red-500">
-                My Restaurant
+                Sajian_duMonde
               </a>
             </li>
             <li className="flex items-center">
@@ -51,7 +51,7 @@ export default function Footer() {
               <a
                 href="http://www.twitter.com"
                 className="text-sm hover:text-red-500">
-                My Restaurant
+                Sajian du Monde
               </a>
             </li>
             <li className="flex items-center">
@@ -63,7 +63,7 @@ export default function Footer() {
               <a
                 href="http://www.tiktok.com"
                 className="text-sm hover:text-red-500">
-                My Restaurant
+                Sajian du Monde
               </a>
             </li>
           </ul>

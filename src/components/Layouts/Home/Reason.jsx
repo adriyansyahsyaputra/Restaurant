@@ -25,7 +25,7 @@ export default function Reason() {
         </div>
         <div className="lg:w-1/2">
           <img
-            src="./public/img/room.jpg"
+            src="/img/room.jpg"
             alt="Room"
             width="300px"
             height="200px"

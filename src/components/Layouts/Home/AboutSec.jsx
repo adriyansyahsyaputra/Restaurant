@@ -21,7 +21,7 @@ export default function AboutSec() {
         </div>
         <div className="lg:w-1/2">
           <img
-            src="./public/img/about.png"
+            src="/img/about.png"
             alt="About"
             width="300px"
             height="300px"

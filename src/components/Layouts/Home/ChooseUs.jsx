@@ -15,7 +15,7 @@ export default function Reason() {
         <section className="grid gap-3 mt-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="p-4 text-center">
             <img
-              src="./public/img/icon/discount.png"
+              src="/img/icon/discount.png"
               alt="Best Offer"
               className="w-20 mx-auto mb-2"
             />
@@ -27,7 +27,7 @@ export default function Reason() {
           </div>
           <div className="p-4 text-center">
             <img
-              src="./public/img/icon/vegetables.png"
+              src="/img/icon/vegetables.png"
               alt="Fresh Ingredients"
               className="w-20 mx-auto mb-2"
             />
@@ -39,7 +39,7 @@ export default function Reason() {
           </div>
           <div className="p-4 text-center">
             <img
-              src="./public/img/icon/food.png"
+              src="/img/icon/food.png"
               alt="Delicious Food"
               className="w-20 mx-auto mb-2"
             />
@@ -51,7 +51,7 @@ export default function Reason() {
           </div>
           <div className="p-4 text-center">
             <img
-              src="./public/img/icon/fast-time.png"
+              src="/img/icon/fast-time.png"
               alt="Fast Serving"
               className="w-20 mx-auto mb-2"
             />

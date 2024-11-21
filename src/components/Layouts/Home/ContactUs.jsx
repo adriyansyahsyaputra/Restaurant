@@ -71,7 +71,7 @@ export default function ContactUs() {
           </div>
           <div>
             <img
-              src="./public/img/contact.png"
+              src="/img/contact.png"
               width="550px"
               height="500px"
               alt="Contact Us"

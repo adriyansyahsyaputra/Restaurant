@@ -127,7 +127,7 @@ export default function Navbar() {
                         onClick={toggleDropdown}
                         className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition-all duration-300">
                         <img
-                          src="/public/img/default.jpg"
+                          src="/img/default.jpg"
                           alt="Profile"
                           className="w-10 h-10 rounded-full object-cover border-2 border-gray-300 group-hover:border-blue-500"
                         />

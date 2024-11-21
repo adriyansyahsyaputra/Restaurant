@@ -26,7 +26,7 @@ export default function DetailProducts() {
     <>
       <div className="w-full mx-auto p-6 bg-red-100 rounded-lg shadow-md flex flex-col md:flex-row font-inter">
         <img
-          src={`./public/img/${image}`}
+          src={`/img/${image}`}
           alt={name}
           className="w-full md:w-60 h-60 object-cover rounded-lg"
         />

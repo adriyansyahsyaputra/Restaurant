@@ -24,7 +24,7 @@ export default function Hero() {
             </Link>
           </div>
           <div className="md:flex md:justify-center">
-            <img src="./public/img/burger.png" alt="Hero" />
+            <img src="/img/burger.png" alt="Hero" />
           </div>
         </div>
       </div>

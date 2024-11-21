@@ -20,7 +20,7 @@ export default function CartNav(props) {
           onClick={toggleCart}
           className="text-base text-slate-800 py-2 mx-8 flex items-center group-hover:text-red-500">
           <img
-            src="./public/img/icon/bag.png"
+            src="/img/icon/bag.png"
             alt="Cart Icon"
             className="w-6 h-6 mr-2"
           />
@@ -59,7 +59,7 @@ function CartDropdown() {
                   className="flex items-center justify-between">
                   <div className="flex items-center">
                     <img
-                      src={`/public/img/${item.image}`}
+                      src={`/img/${item.image}`}
                       alt={item.name}
                       className="w-14 h-14 mr-3 rounded-md"
                     />

@@ -54,7 +54,7 @@ function SocialLogin() {
           href="#"
           className="flex items-center justify-center w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition duration-200">
           <img
-            src="./public/img/icon/facebook.png"
+            src="/img/icon/facebook.png"
             width="25px"
             alt="google"
             className="mr-2"></img>
@@ -64,7 +64,7 @@ function SocialLogin() {
           href="#"
           className="flex items-center justify-center w-full bg-white text-slate-600 font-semibold py-2 rounded border border-slate-500 hover:bg-slate-100 transition duration-200">
           <img
-            src="./public/img/icon/google.png"
+            src="/img/icon/google.png"
             width="25px"
             alt="google"
             className="mr-2"></img>{" "}

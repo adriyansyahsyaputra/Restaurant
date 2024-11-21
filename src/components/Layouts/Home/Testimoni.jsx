@@ -20,19 +20,19 @@ export default function Testimoni() {
             {[
               {
                 name: "Marisca Stanley",
-                image: "./public/img/Testimoni/1.png",
+                image: "/img/Testimoni/1.png",
                 quote:
                   "Sajian du Monde is truly a unique restaurant. I felt like I was traveling the world with every mouthful. The Indonesian dishes are also amazing!",
               },
               {
                 name: "Jack Wider",
-                image: "./public/img/Testimoni/2.png",
+                image: "/img/Testimoni/2.png",
                 quote:
                   "This place is very cozy and classy. The food is amazingly good, and the presentation is very chic. Will definitely be back again!",
               },
               {
                 name: "Jason McMany",
-                image: "./public/img/Testimoni/3.png",
+                image: "/img/Testimoni/3.png",
                 quote:
                   "This was an unforgettable culinary experience! I loved the fusion of flavors presented in each dish. Sajian du Monde took me on an enchanting adventure of flavors.",
               },

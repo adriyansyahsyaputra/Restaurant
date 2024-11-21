@@ -20,7 +20,7 @@ export default function Footer() {
           <ul className="grid grid-cols-2 gap-2 lg:grid-cols-1">
             <li className="flex items-center">
               <img
-                src="./public/img/icon/facebook.png"
+                src="/img/icon/facebook.png"
                 alt="FB"
                 className="inline w-4 mr-2"
               />
@@ -32,7 +32,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center">
               <img
-                src="./public/img/icon/instagram.png"
+                src="/img/icon/instagram.png"
                 alt="IG"
                 className="inline w-4 mr-2"
               />
@@ -44,7 +44,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center">
               <img
-                src="./public/img/icon/twitter.png"
+                src="/img/icon/twitter.png"
                 alt="Twitter"
                 className="inline w-4 mr-2"
               />
@@ -56,7 +56,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center">
               <img
-                src="./public/img/icon/tiktok.png"
+                src="/img/icon/tiktok.png"
                 alt="Tiktok"
                 className="inline w-4 mr-2"
               />

@@ -28,7 +28,7 @@ export default function FavouriteDrinks() {
             <div className="text-center" key={drink.id}>
               <Link to={`/details`} state={drink}>
                 <img
-                  src={`/public/img/${drink.image}`}
+                  src={`/img/${drink.image}`}
                   alt="Produk 1"
                   className="rounded-full mx-auto mb-2 w-32 h-32 md:w-48 md:h-48 object-cover"
                 />

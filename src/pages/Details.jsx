@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/template/navbar/Navbar";
-import Footer from "@/components/template/Footer/Footer";
+import Footer from "@/components/template/footer/Footer";
 import DetailProducts from "@/components/Layouts/Details/DetailProducts";
 
 export default function Details() {

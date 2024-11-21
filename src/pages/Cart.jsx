@@ -1,4 +1,4 @@
-import CartResult from "../components/Layouts/Cart/CartResult";
+import CartResult from "@/components/Layouts/Cart/CartResult";
 import Footer from "@/components/template/footer/Footer";
 import Navbar from "@/components/template/Navbar/Navbar";
 

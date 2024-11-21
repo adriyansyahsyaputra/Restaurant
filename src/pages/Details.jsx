@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/template/Navbar/Navbar";
-import Footer from "../components/template/Footer/Footer";
-import DetailProducts from "../components/Layouts/Details/DetailProducts";
+import Navbar from "@/components/template/navbar/Navbar";
+import Footer from "@/components/template/Footer/Footer";
+import DetailProducts from "@/components/Layouts/Details/DetailProducts";
 
 export default function Details() {
     return (

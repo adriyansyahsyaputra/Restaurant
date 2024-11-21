@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Search from "../components/Layouts/Menu/Search";
-import VariousDrinks from "../components/Layouts/Menu/VariousDrinks";
-import VariousFoods from "../components/Layouts/Menu/VariousFoods";
-import Footer from "../components/template/footer/Footer";
-import Navbar from "../components/template/Navbar/Navbar";
+import Search from "@/components/Layouts/Menu/Search";
+import VariousDrinks from "@/components/Layouts/Menu/VariousDrinks";
+import VariousFoods from "@/components/Layouts/Menu/VariousFoods";
+import Footer from "@/components/template/footer/Footer";
+import Navbar from "@/components/template/Navbar/Navbar";
 import Hero from "@/components/Fragments/Hero";
 
 export default function Menu() {

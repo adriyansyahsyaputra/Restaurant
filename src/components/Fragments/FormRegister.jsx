@@ -128,8 +128,8 @@ export default function FormRegister() {
             <img
               src={
                 isPassword
-                  ? "/public/img/icon/eye-on.png"
-                  : "/public/img/icon/eye-hide.png"
+                  ? "/img/icon/eye-on.png"
+                  : "/img/icon/eye-hide.png"
               }
               className="w-6 h-6"
               alt="Toggle Password Visibility"
@@ -155,8 +155,8 @@ export default function FormRegister() {
             <img
               src={
                 isConfirmPassword
-                  ? "/public/img/icon/eye-on.png"
-                  : "/public/img/icon/eye-hide.png"
+                  ? "/img/icon/eye-on.png"
+                  : "/img/icon/eye-hide.png"
               }
               className="w-6 h-6"
               alt="Toggle Password Visibility"

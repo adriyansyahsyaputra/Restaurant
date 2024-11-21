@@ -83,8 +83,8 @@ export default function FormLogin() {
             <img
               src={
                 isPasswordVisible
-                  ? "/public/img/icon/eye-on.png"
-                  : "/public/img/icon/eye-hide.png"
+                  ? "/img/icon/eye-on.png"
+                  : "/img/icon/eye-hide.png"
               }
               className="w-6 h-6"
               alt="Toggle Password Visibility"

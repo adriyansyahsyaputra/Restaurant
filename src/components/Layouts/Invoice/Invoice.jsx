@@ -140,35 +140,37 @@ function InvoiceBody({ selectedPayment, setSelectedPayment, cart }) {
   return (
     <>
       {/* Order Items */}
-      <div className="px-3 md:px-6 py-4">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b">
-              <th className="text-left py-2">Produk</th>
-              <th className="text-right py-2 pr-2">Harga</th>
-              <th className="text-right py-2">Jumlah</th>
-              <th className="text-right py-2">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.map((item, index) => (
-              <tr key={index} className="border-b border-gray-100">
-                <td className="py-3">{item.name}</td>
-                <td className="text-right">{item.price.toLocaleString("id-ID", {
-                  style: "currency",
-                  currency: "IDR",
-                })}</td>
-                <td className="text-right">{item.quantity}</td>
-                <td className="text-right">
-                  {(item.price * item.quantity).toLocaleString("id-ID", {
-                    style: "currency",
-                    currency: "IDR",
-                  })}
-                </td>
+      <div className="px-3 md:px-6 py-4 overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2">Produk</th>
+                <th className="text-right py-2 pr-2">Harga</th>
+                <th className="text-right py-2">Jumlah</th>
+                <th className="text-right py-2">Total</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {cart.map((item, index) => (
+                <tr key={index} className="border-b border-gray-100">
+                  <td className="py-3">{item.name}</td>
+                  <td className="text-right">
+                    {item.price.toLocaleString("id-ID", {
+                      style: "currency",
+                      currency: "IDR",
+                    })}
+                  </td>
+                  <td className="text-right">{item.quantity}</td>
+                  <td className="text-right">
+                    {(item.price * item.quantity).toLocaleString("id-ID", {
+                      style: "currency",
+                      currency: "IDR",
+                    })}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
       </div>
 
       {/* Payment Method */}

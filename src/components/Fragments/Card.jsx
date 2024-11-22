@@ -37,7 +37,7 @@ export default function Card(props) {
         <img
           src={`/img/${image}`}
           alt={name}
-          className="w-full h-48 md:h-52 object-center object-cover rounded-t-lg"
+          className="w-full h-40 md:h-52 object-center object-cover rounded-t-lg"
         />
       </Link>
 

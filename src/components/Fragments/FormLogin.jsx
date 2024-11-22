@@ -34,7 +34,9 @@ export default function FormLogin() {
     }
 
     // Cari user dengan username yang sesuai
-    const user = users.find((u) => u.username === username && u.password === password);
+    const user = users.find(
+      (u) => u.username === username && u.password === password
+    );
 
     if (user) {
       // Login berhasil, arahkan ke halaman utama
@@ -64,7 +66,7 @@ export default function FormLogin() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="mb-4 relative">
+        <div className="relative">
           <InputLabel
             htmlFor="password"
             label="Password"
@@ -75,7 +77,6 @@ export default function FormLogin() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <p>{message}</p>
           <button
             type="button"
             onClick={togglePasswordVisibility}
@@ -91,6 +92,7 @@ export default function FormLogin() {
             />
           </button>
         </div>
+        <p className="text-red-500 text-xs mb-3">{message}</p>
         <Button
           type="submit"
           classname="w-full bg-red-500 font-bold py-2 hover:bg-red-600 transition duration-200">

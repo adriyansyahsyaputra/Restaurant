@@ -23,7 +23,7 @@ export default function CartResult() {
               <div className="flex items">
                 {/* Gambar Produk */}
                 <img
-                  src={`public/img/${item.image}`}
+                  src={`/img/${item.image}`}
                   alt={item.name}
                   className="w-20 h-20 object-cover rounded-md mb-4"
                 />

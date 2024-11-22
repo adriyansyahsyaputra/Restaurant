@@ -6,7 +6,7 @@ export default function Footer() {
       {/* Footer Start */}
       <footer className="bg-slate-800 mt-20 w-full text-slate-100 px-6 py-10 text-center md:text-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center md:place-items-start lg:place-items-start font-inter">
         <div className="font-serif mb-6 md:mb-0">
-          <h2 className="text-xl font-semibold mb-2">My Restaurant</h2>
+          <h2 className="text-xl font-semibold mb-2">Sajian du Monde</h2>
           <p className="text-sm">
             Sajian du Monde is a restaurant that combines the flavors of
             Indonesia with classic cuisines from around the world. Each dish is

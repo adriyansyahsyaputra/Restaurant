@@ -11,12 +11,14 @@ import Details from './pages/Details';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Invoice from './pages/Invoice';
+import ScrollToTop from './hooks/ScrollToTop';
 
 function App() {
 
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/menu' element={<Menu />}></Route>
